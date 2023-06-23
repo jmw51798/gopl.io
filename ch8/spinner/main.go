@@ -11,12 +11,16 @@ import (
 	"time"
 )
 
+var count int = 0
+//JMWvar cache map[int]int
+
 //!+
 func main() {
+    //JMWcache = make(map[int]int)
 	go spinner(100 * time.Millisecond)
 	const n = 45
 	fibN := fib(n) // slow
-	fmt.Printf("\rFibonacci(%d) = %d\n", n, fibN)
+	fmt.Printf("\rFibonacci(%d) = %d (count=%d)\n", n, fibN, count)
 }
 
 func spinner(delay time.Duration) {
@@ -29,9 +33,16 @@ func spinner(delay time.Duration) {
 }
 
 func fib(x int) int {
+	count++
 	if x < 2 {
 		return x
 	}
+	//JMWif cache[x] != 0 {
+		//JMWreturn cache[x]
+	//JMW}
+	//JMWfmt.Printf("fib(%d): doing return fib(%d) + fib(%d)\n", x, x-1, x-2)
+	//JMWcache[x] = fib(x-1) + fib(x-2)
+	//JMWreturn cache[x]
 	return fib(x-1) + fib(x-2)
 }
 

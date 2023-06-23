@@ -1,0 +1,19 @@
+cd ch4/issues
+go build .
+./issues repo:golang/go is:open json decoder
+./issues repo:open-telemetry/opentelemetry-ebpf is:open
+./issues repo:open-telemetry/opentelemetry-ebpf is:open lunar
+./issues repo:open-telemetry/opentelemetry-ebpf is:open author:jimwsplk
+
+cd ../issueshtml
+go build .
+./issueshtml repo:open-telemetry/opentelemetry-ebpf is:open
+./issueshtml repo:open-telemetry/opentelemetry-ebpf is:open lunar
+./issueshtml repo:open-telemetry/opentelemetry-ebpf is:open author:jimwsplk
+
+cd ../issuesreport
+go build .
+./issuesreport repo:open-telemetry/opentelemetry-ebpf is:open
+./issuesreport repo:open-telemetry/opentelemetry-ebpf is:open lunar
+./issuesreport repo:open-telemetry/opentelemetry-ebpf is:open author:jimwsplk
+
